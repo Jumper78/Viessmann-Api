@@ -177,6 +177,8 @@ final class ViessmannFeature
     const HEATING_POWER_CONSUMPTION_HEATING = "heating.power.consumption.heating";
     const HEATING_POWER_CONSUMPTION_TOTAL = "heating.power.consumption.total";
 
+    const HEATING_ROD_RUNTIME = "heating.heatingRod.runtime";
+
     const HEATING_SENSORS_TEMPERATURE_HYDRAULICSEPARATOR = "heating.sensors.temperature.hydraulicSeparator";
     const HEATING_SENSORS_TEMPERATURE_INCREASEDRETURN = "heating.sensors.temperature.increasedReturn";
     const HEATING_SENSORS_TEMPERATURE_OUTSIDE = "heating.sensors.temperature.outside";

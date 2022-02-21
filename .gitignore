@@ -2,3 +2,7 @@ example/credentials.properties
 *.properties
 NotesPerso.txt
 .idea
+composer.lock
+example/credentials.properties
+vendor/*
+example/credentials.properties

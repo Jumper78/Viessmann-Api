@@ -224,6 +224,36 @@ final class ViessmannAPI
     }
 
     /**
+     * getEventsGatewaySerial
+     * @return string
+     * @throws ViessmannApiException
+     */
+    public function getEventsGatewaySerial()
+    {
+        try {
+            return $this->viessmannOauthClient->readData("events-history/events?gatewaySerial=" . $this->getGatewayId());
+        } catch (TokenResponseException $e) {
+            throw new ViessmannApiException("\n\t Unable to read installation basic information   \n\t Reason: " . $e->getMessage(), 2, $e);
+
+        }
+    }
+
+    /**
+     * getEventsInstallationId
+     * @return string
+     * @throws ViessmannApiException
+     */
+    public function getEventsInstallationId()
+    {
+        try {
+            return $this->viessmannOauthClient->readData("events-history/events?installationId=" . $this->getInstallationId());
+        } catch (TokenResponseException $e) {
+            throw new ViessmannApiException("\n\t Unable to read installation basic information   \n\t Reason: " . $e->getMessage(), 2, $e);
+
+        }
+    }
+
+    /**
      * setRawJsonData
      * @param $feature The feature to set
      * @param $action The action to execute
@@ -465,6 +495,20 @@ final class ViessmannAPI
     function getHeatingCompressorLoadClassHours($circuitId = NULL, $classNumber = NULL): int
     {
         return $this->viessmannFeatureProxy->getEntity($this->buildFeatureCompressors($circuitId, self::HEATING_COMPRESSOR_STATISTICS))->getProperty($this->buildHeatingCompressorLoadClassParameter($classNumber))["value"];
+    }
+
+    /**
+     * Heating rod (runtime)
+     *
+     * Shows runtime of heating rod (in seconds)
+     * @param string $type the type of statistics("levelOne": number of active seconds in levelOne or "levelTwo": number of active seconds in levelTwo)
+     * @return string the runtime in seconds
+     * @throws ViessmannApiException
+     */
+    public
+    function getHeatingRodRuntime($type = "levelOne"): string
+    {
+        return $this->viessmannFeatureProxy->getEntity(ViessmannFeature::HEATING_ROD_RUNTIME)->getProperty($type)["value"];
     }
 
     /**

@@ -31,9 +31,9 @@ class ViessmannOauthClientImpl implements ViessmannOauthClient
      * ViessmannOauthClient constructor.
      * @param $viessmannOauthService
      */
-    const BASE_URL = 'https://api.viessmann.com/iot/v1/';
+    const BASE_URL = 'https://api.viessmann-climatesolutions.com/iot/v1/';
 
-    const HTTPS_IAM_VIESSMANN_COM_IDP_V_1_AUTHORIZE = 'https://iam.viessmann.com/idp/v2/authorize';
+    const HTTPS_IAM_VIESSMANN_COM_IDP_V_1_AUTHORIZE = 'https://iam.viessmann-climatesolutions.com/idp/v2/authorize';
 
     const REDIRECT_URL = "http://localhost:4200/";
 

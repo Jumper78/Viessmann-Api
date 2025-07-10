@@ -18,8 +18,8 @@ final class ViessmannOauthService extends AbstractService
 {
 
     const SCOPE_USAGE_GET = 'IoT%20User';
-    private $authorizeURL = 'https://iam.viessmann.com/idp/v2/authorize';
-    private $token_url = 'https://iam.viessmann.com/idp/v2/token';
+    private $authorizeURL = 'https://iam.viessmann-climatesolutions.com/idp/v2/authorize';
+    private $token_url = 'https://iam.viessmann-climatesolutions.com/idp/v2/token';
     protected $redirect_uri = "http://localhost:4200/";
 
     /**
